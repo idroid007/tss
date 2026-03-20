@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/postcss": "^4.2.2",
     "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",

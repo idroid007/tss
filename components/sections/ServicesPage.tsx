@@ -27,7 +27,7 @@ const techCategories = [
     color: 'from-violet-500 to-brand-primary',
     border: 'border-violet-500/30',
     text: 'text-violet-400',
-    techs: ['Node.js', 'Python', 'Go', 'Rust', 'FastAPI', 'Django', 'Laravel', 'NestJS'],
+    techs: ['Node.js', 'Python', 'Java', 'Go', 'Rust', 'FastAPI', 'Django', 'Laravel', 'NestJS'],
   },
   {
     label: 'Mobile',

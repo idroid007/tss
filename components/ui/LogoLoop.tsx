@@ -74,7 +74,7 @@ export default function LogoLoop({
             className="flex flex-col items-center gap-2 mx-6 group cursor-default"
           >
             <div
-              className={`${iconSize} flex items-center justify-center transition-all duration-300`}
+              className={`${iconSize} flex items-center justify-center transition-all duration-300 [&>svg]:w-full [&>svg]:h-full`}
               style={{ color: item.color ?? '#ffffff99', filter: `drop-shadow(0 0 6px ${item.color ?? '#6C63FF'}55)` }}
             >
               {item.icon}

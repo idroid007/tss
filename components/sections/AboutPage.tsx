@@ -2,13 +2,12 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Linkedin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import CountUp from 'react-countup'
 import { COMPANY } from '@/lib/constants'
 import GradientText from '@/components/ui/GradientText'
 import BlurText from '@/components/ui/BlurText'
 import SpotlightCard from '@/components/ui/SpotlightCard'
-import TiltedCard from '@/components/ui/TiltedCard'
 import GlassCard from '@/components/ui/GlassCard'
 import Magnet from '@/components/ui/Magnet'
 
@@ -159,7 +158,7 @@ export default function AboutPage() {
               {
                 icon: '📖',
                 title: 'History',
-                desc: 'Founded in Faridabad, Haryana, Technogig grew from a passionate startup to a 50+ person agency with offices in Faridabad and Mathura, serving 85+ happy clients across the globe.',
+                desc: 'Founded in Faridabad, Haryana, Technogig grew from a passionate startup to a 50+ person agency with offices in Faridabad and Mathura, serving 100+ happy clients across the globe.',
               },
             ].map((card, i) => (
               <motion.div
@@ -174,50 +173,6 @@ export default function AboutPage() {
                   <h3 className="text-xl font-display font-bold text-white mb-4">{card.title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{card.desc}</p>
                 </GlassCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TEAM */}
-      <section className="py-24 px-4 bg-brand-card">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-brand-secondary font-mono text-sm tracking-wider uppercase">The People</span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mt-3">
-              Meet Our <span className="gradient-text">Team</span>
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <TiltedCard rotateAmplitude={8} scaleOnHover={1.04}>
-                  <SpotlightCard
-                    className="p-8 text-center group"
-                    spotlightColor="rgba(0, 217, 255, 0.2)"
-                  >
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-2xl font-display font-bold text-white mx-auto mb-5">
-                      {member.initials}
-                    </div>
-                    <h3 className="font-display font-semibold text-white mb-1">{member.name}</h3>
-                    <p className="text-brand-secondary text-sm mb-4">{member.role}</p>
-                    <a href="#" aria-label={`${member.name} LinkedIn`} className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-brand-border hover:border-brand-primary hover:text-brand-primary text-white/40 transition-colors">
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                  </SpotlightCard>
-                </TiltedCard>
               </motion.div>
             ))}
           </div>

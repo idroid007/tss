@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import { PROJECTS } from '@/lib/constants'
 import WordReveal from '@/components/ui/WordReveal'
 import GradientText from '@/components/ui/GradientText'
@@ -61,7 +60,7 @@ export default function ProjectsPage() {
             transition={{ delay: 0.2 }}
           >
             <GradientText colors={['#00D9FF', '#6C63FF', '#FF6B6B', '#00D9FF']} animationSpeed={7} className="text-white/60 text-xl max-w-2xl mx-auto">
-              12+ projects across industries — each one a story of challenge, craft, and impact.
+              20+ projects across industries — each one a story of challenge, craft, and impact.
             </GradientText>
           </motion.div>
         </div>
@@ -125,15 +124,7 @@ export default function ProjectsPage() {
                       </div>
                       <div className="p-6">
                         <h3 className="font-display font-bold text-white text-lg mb-2">{project.title}</h3>
-                        <p className="text-white/50 text-sm leading-relaxed mb-5 line-clamp-2">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          {project.tech.map(t => (
-                            <span key={t} className="px-2 py-1 rounded bg-brand-border text-white/50 text-xs font-mono">{t}</span>
-                          ))}
-                        </div>
-                        <a href="#" className="inline-flex items-center gap-1 text-brand-secondary text-sm font-medium hover:gap-2 transition-all">
-                          View Case Study <ArrowRight className="w-3 h-3" />
-                        </a>
+                        <p className="text-white/50 text-sm leading-relaxed line-clamp-2">{project.description}</p>
                       </div>
                     </SpotlightCard>
                   </TiltedCard>

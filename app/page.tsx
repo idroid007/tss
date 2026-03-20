@@ -199,7 +199,7 @@ export default function HomePage() {
 
       {/* LOGO LOOP MARQUEE */}
       <section className="py-6 bg-brand-card border-y border-brand-border">
-        <LogoLoop items={techLogos} speed={40} direction="left" iconSize="w-10 h-10" pauseOnHover={true} />
+        <LogoLoop items={techLogos} speed={40} direction="left" iconSize="w-24 h-24" pauseOnHover={true} />
       </section>
 
       {/* ABOUT SNAPSHOT */}
@@ -239,7 +239,7 @@ export default function HomePage() {
                   { icon: '🚀', title: 'Fast Delivery', desc: 'Agile sprints, on-time launches, zero compromises on quality.' },
                   { icon: '💡', title: 'Innovative Solutions', desc: 'We bring fresh perspectives and cutting-edge tech to every challenge.' },
                   { icon: '🔒', title: 'Secure & Scalable', desc: 'Enterprise-grade architecture built to scale with your growth.' },
-                  { icon: '🌍', title: 'Global Clients', desc: 'Serving 85+ clients across India, USA, UK, UAE, and beyond.' },
+                  { icon: '🌍', title: 'Global Clients', desc: 'Serving 100+ clients across India, USA, UK, UAE, and beyond.' },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -359,14 +359,6 @@ export default function HomePage() {
                     <div className="p-5">
                       <h3 className="font-display font-semibold text-white mb-2">{project.title}</h3>
                       <p className="text-white/50 text-sm mb-4 line-clamp-2">{project.description}</p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tech.slice(0, 3).map(t => (
-                          <span key={t} className="px-2 py-1 rounded bg-brand-border text-white/60 text-xs font-mono">{t}</span>
-                        ))}
-                      </div>
-                      <Link href="/projects" className="inline-flex items-center gap-1 text-brand-secondary text-sm font-medium hover:gap-2 transition-all">
-                        View Case Study <ArrowRight className="w-3 h-3" />
-                      </Link>
                     </div>
                   </div>
                 </TiltedCard>

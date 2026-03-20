@@ -10,8 +10,8 @@ export const COMPANY = {
     'Techman City, Mathura, UP',
   ],
   stats: [
-    { value: 85, suffix: '+', label: 'Happy Clients' },
-    { value: 100, suffix: '+', label: 'Projects Delivered' },
+    { value: 100, suffix: '+', label: 'Happy Clients' },
+    { value: 120, suffix: '+', label: 'Projects Delivered' },
     { value: 10000, suffix: '+', label: 'Businesses Impacted' },
     { value: 5, suffix: '★', label: 'Average Rating' },
   ],

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { MapPin, Phone, Mail, Send } from 'lucide-react'
 import { FaLinkedin, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa'
+import emailjs from '@emailjs/browser'
 import toast from 'react-hot-toast'
 import GradientText from '@/components/ui/GradientText'
 import BlurText from '@/components/ui/BlurText'
@@ -20,10 +21,27 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1500))
-    setLoading(false)
-    toast.success('Message sent! We\'ll get back within 24 hours.')
-    setForm({ name: '', email: '', phone: '', service: '', budget: '', message: '' })
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          service: form.service,
+          budget: form.budget,
+          message: form.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      toast.success('Message sent! We\'ll get back within 24 hours.')
+      setForm({ name: '', email: '', phone: '', service: '', budget: '', message: '' })
+    } catch {
+      toast.error('Failed to send message. Please try again or email us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -97,12 +115,12 @@ export default function ContactPage() {
               <div className="text-white/40 text-sm font-mono mb-4">Follow Us</div>
               <div className="flex gap-3">
                 {[
-                  { icon: FaLinkedin, label: 'LinkedIn' },
-                  { icon: FaTwitter, label: 'Twitter' },
-                  { icon: FaInstagram, label: 'Instagram' },
-                  { icon: FaGithub, label: 'GitHub' },
-                ].map(({ icon: Icon, label }) => (
-                  <a key={label} href="#" aria-label={label} className="w-10 h-10 rounded-xl glass border border-brand-border flex items-center justify-center text-white/50 hover:text-brand-primary hover:border-brand-primary transition-all">
+                  { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/technogig-software-solution/' },
+                  { icon: FaTwitter, label: 'Twitter', href: '#' },
+                  { icon: FaInstagram, label: 'Instagram', href: '#' },
+                  { icon: FaGithub, label: 'GitHub', href: '#' },
+                ].map(({ icon: Icon, label, href }) => (
+                  <a key={label} href={href} aria-label={label} target={href !== '#' ? '_blank' : undefined} rel={href !== '#' ? 'noopener noreferrer' : undefined} className="w-10 h-10 rounded-xl glass border border-brand-border flex items-center justify-center text-white/50 hover:text-brand-primary hover:border-brand-primary transition-all">
                     <Icon className="w-4 h-4" />
                   </a>
                 ))}
