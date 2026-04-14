@@ -37,12 +37,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Technogig Software Solution"
-              width={180}
-              height={45}
+              width={400}
+              height={400}
               priority
-              className="h-10 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
