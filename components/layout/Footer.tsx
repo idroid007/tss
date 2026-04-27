@@ -13,11 +13,11 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Technogig Software Solution"
                 width={200}
                 height={50}
-                className="h-10 w-auto"
+                className="h-18 w-auto"
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
